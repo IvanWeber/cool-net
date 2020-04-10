@@ -1,4 +1,9 @@
 .left-column {
     background-color: blue;
     min-height: 500px;
+    margin: 5px;
+  }
+
+  .left-column ul {
+    list-style-type: none;
   }
