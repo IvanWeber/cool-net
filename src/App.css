@@ -52,8 +52,9 @@ body {
 }
 
 .content {
-  flex: 1 0 auto;
+  /* flex: 1 0 auto; */
   display: flex;
+  align-items: flex-start; 
   flex-direction: row;
 }
 
@@ -88,13 +89,15 @@ body {
   margin: 5px;
 }
 
-.left-column {
-  background-color: blue;
+.main-content-wrapper {
+  display: flex;
+  align-items: flex-start; 
+  flex-direction: row;
 }
 
 @media only screen and (max-width: 1000px) {
-  .content {
-    flex: 1 0 auto;
+  .main-content-wrapper {
+    /* flex: 1 0 auto; */
     display: flex;
     flex-direction: column;
   }
