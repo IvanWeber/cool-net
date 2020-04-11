@@ -10,6 +10,7 @@ const LeftMenu = (props) => {
             <ul>
                 <li><NavLink to='/userpage' activeClassName={s.activeLink}>Главная страница</NavLink></li>
                 <li><NavLink to='/feed' activeClassName={s.activeLink}>Новости</NavLink></li>
+                <li><NavLink to='/dialogs' activeClassName={s.activeLink}>Диалоги</NavLink></li>
                 <li><a>Группы</a></li>
                 <li><a>Настройки</a></li> 
                 <li><a>Выход</a></li>

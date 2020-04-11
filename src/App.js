@@ -4,8 +4,9 @@ import './App.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import LeftMenu from './components/LeftMenu/LeftMenu';
-import MainContentWrapper from './components/MainContentWrapper/MainContentWrapper'
-import UserPage from './components/UserPage/UserPage'
+import MainContentWrapper from './components/MainContentWrapper/MainContentWrapper';
+import UserPage from './components/UserPage/UserPage';
+import Dialogs from './components/Dialogs/Dialogs';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
                 <LeftMenu />
                 <Route path='/feed' component={MainContentWrapper}/>
                 <Route path='/userpage' component={UserPage}/>
+                <Route path='/dialogs' component={Dialogs}/>
             </div>
                 <Footer />
             </div>
