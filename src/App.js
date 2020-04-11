@@ -3,19 +3,27 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import Content from './components/Content/Content';
+import LeftMenu from './components/LeftMenu/LeftMenu';
+import MainContentWrapper from './components/MainContentWrapper/MainContentWrapper'
+import UserPage from './components/UserPage/UserPage'
+import { BrowserRouter, Route } from 'react-router-dom';
 
 function App() {
 
   return (
-    <div className="superwrapper">
-        <div className="wrapper">
-            <Header />
-            <Content /> 
-            <Footer />
+    <BrowserRouter>
+        <div className="superwrapper">
+            <div className="wrapper">
+                <Header />
+            <div className='content'>
+                <LeftMenu />
+                <Route path='/feed' component={MainContentWrapper}/>
+                <Route path='/userpage' component={UserPage}/>
+            </div>
+                <Footer />
+            </div>
         </div>
-    </div>
-
+    </BrowserRouter>
   );
 }
 

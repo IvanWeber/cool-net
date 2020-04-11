@@ -1,5 +1,6 @@
 import React from "react";
 import s from './LeftMenu.module.css';
+import { NavLink } from "react-router-dom";
 
 
 const LeftMenu = (props) => {
@@ -7,8 +8,8 @@ const LeftMenu = (props) => {
 
         <div className={s['left-column']}>
             <ul>
-                <li><a>Главная страница</a></li>
-                <li><a>Новости</a></li>
+                <li><NavLink to='/userpage'>Главная страница</NavLink></li>
+                <li><NavLink to='/feed'>Новости</NavLink></li>
                 <li><a>Группы</a></li>
                 <li><a>Настройки</a></li> 
                 <li><a>Выход</a></li>

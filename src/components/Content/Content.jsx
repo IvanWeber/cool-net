@@ -1,8 +1,8 @@
 import React from "react";
 import s from './Content.module.css';
 
-import LeftMenu from './LeftMenu/LeftMenu'
-import MainContentWrapper from './MainContentWrapper/MainContentWrapper'
+import LeftMenu from '../LeftMenu/LeftMenu'
+// import MainContentWrapper from './MainContentWrapper/MainContentWrapper'
 
 
 const Content = (props) => {
