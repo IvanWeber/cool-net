@@ -7,3 +7,11 @@
   .left-column ul {
     list-style-type: none;
   }
+
+  .left-column a {
+    text-decoration: none;
+  }
+
+  .left-column .activeLink {
+    color: yellow;
+  }

@@ -8,8 +8,8 @@ const LeftMenu = (props) => {
 
         <div className={s['left-column']}>
             <ul>
-                <li><NavLink to='/userpage'>Главная страница</NavLink></li>
-                <li><NavLink to='/feed'>Новости</NavLink></li>
+                <li><NavLink to='/userpage' activeClassName={s.activeLink}>Главная страница</NavLink></li>
+                <li><NavLink to='/feed' activeClassName={s.activeLink}>Новости</NavLink></li>
                 <li><a>Группы</a></li>
                 <li><a>Настройки</a></li> 
                 <li><a>Выход</a></li>
