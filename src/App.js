@@ -5,7 +5,8 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import LeftMenu from './components/LeftMenu/LeftMenu';
 import MainContentWrapper from './components/MainContentWrapper/MainContentWrapper';
-import UserPage from './components/UserPage/UserPage';
+// import UserPage from './components/UserPage/UserPage';
+import Profile from './components/Profile/Profile'
 import Dialogs from './components/Dialogs/Dialogs';
 import { BrowserRouter, Route } from 'react-router-dom';
 
@@ -19,7 +20,7 @@ function App() {
             <div className='content'>
                 <LeftMenu />
                 <Route path='/feed' component={MainContentWrapper}/>
-                <Route path='/userpage' component={UserPage}/>
+                <Route path='/profile' component={Profile}/>
                 <Route path='/dialogs' component={Dialogs}/>
             </div>
                 <Footer />
