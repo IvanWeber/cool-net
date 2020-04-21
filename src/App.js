@@ -10,8 +10,10 @@ import Profile from './components/Profile/Profile'
 import Dialogs from './components/Dialogs/Dialogs';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-function App() {
 
+
+function App(props) {
+ debugger;
   return (
     <BrowserRouter>
         <div className="superwrapper">
@@ -20,8 +22,8 @@ function App() {
             <div className='content'>
                 <LeftMenu />
                 <Route path='/feed' component={MainContentWrapper}/>
-                <Route path='/profile' component={Profile}/>
-                <Route path='/dialogs' component={Dialogs}/>
+                <Route path='/profile' render={() => <Profile/>}/>
+                <Route path='/dialogs' render={() => <Dialogs dialogs={props.dialogs} messages={props.messages}/>}/>
             </div>
                 <Footer />
             </div>
