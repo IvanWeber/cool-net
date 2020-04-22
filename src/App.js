@@ -22,8 +22,8 @@ function App(props) {
             <div className='content'>
                 <LeftMenu />
                 <Route path='/feed' component={MainContentWrapper}/>
-                <Route path='/profile' render={() => <Profile/>}/>
-                <Route path='/dialogs' render={() => <Dialogs dialogs={props.dialogs} messages={props.messages}/>}/>
+                <Route path='/profile' render={() => <Profile posts={props.state.profilePage.posts}/>}/>
+                <Route path='/dialogs' render={() => <Dialogs dialogs={props.state.dialogsPage.dialogs} messages={props.state.dialogsPage.messages}/>}/>
             </div>
                 <Footer />
             </div>
