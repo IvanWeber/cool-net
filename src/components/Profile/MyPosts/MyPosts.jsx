@@ -11,7 +11,7 @@ const MyPosts = (props) => {
             MyPosts
             <div>
                 <textarea></textarea>
-                <button>Add post</button>
+                <button onClick={() => {alert('samuraijscom')}}>Add post</button>
             </div>
             <div className={s.posts}>
                 {messagesElements}
