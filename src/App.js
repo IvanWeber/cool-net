@@ -12,8 +12,8 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 
 
+
 function App(props) {
- debugger;
   return (
     <BrowserRouter>
         <div className="superwrapper">
@@ -22,7 +22,7 @@ function App(props) {
             <div className='content'>
                 <LeftMenu />
                 <Route path='/feed' component={MainContentWrapper}/>
-                <Route path='/profile' render={() => <Profile posts={props.state.profilePage.posts}/>}/>
+                <Route path='/profile' render={() => <Profile profilePage={props.state.profilePage} newPostText={props.state.profilePage.newPostText} addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>}/>
                 <Route path='/dialogs' render={() => <Dialogs dialogs={props.state.dialogsPage.dialogs} messages={props.state.dialogsPage.messages}/>}/>
             </div>
                 <Footer />

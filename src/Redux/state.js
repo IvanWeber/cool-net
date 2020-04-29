@@ -1,3 +1,5 @@
+import {rerenderEntireTree} from '../render.js';
+
 let state = {
     profilePage: {
         posts: [
@@ -5,8 +7,9 @@ let state = {
             {id: 1, message: 'It\'s my first post', likesCount: 11},
             {id: 1, message: 'Blabla', likesCount: 11},
             {id: 1, message: 'Dada', likesCount: 11},
-        ]
-    },
+        ],
+        newPostText: 'it-kamasutra.comaaa'
+    },  
 
     dialogsPage: {
         dialogs: [
@@ -25,5 +28,22 @@ let state = {
     
     sidebar: {}
 }
+
+export let addPost = () => {
+    let newPost = {
+        id: state.profilePage.posts.length + 1, 
+        message: state.profilePage.newPostText, 
+        likesCount: Math.round(Math.random()*100)
+    }
+    state.profilePage.posts.push(newPost);
+    state.profilePage.newPostText = '';
+    rerenderEntireTree(state);
+};
+
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+    console.log(state.profilePage.newPostText);
+};
 
 export default state;
