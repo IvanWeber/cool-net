@@ -15,7 +15,6 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 function App(props) {
   return (
-    <BrowserRouter>
         <div className="superwrapper">
             <div className="wrapper">
                 <Header />
@@ -28,7 +27,6 @@ function App(props) {
                 <Footer />
             </div>
         </div>
-    </BrowserRouter>
   );
 }
 
