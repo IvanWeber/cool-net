@@ -22,7 +22,7 @@ function App(props) {
             <div className='content'>
                 <LeftMenu />
                 <Route path='/feed' component={MainContentWrapper}/>
-                <Route path='/profile' render={() => <Profile profilePage={props.state.profilePage} newPostText={props.state.profilePage.newPostText} addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>}/>
+                <Route path='/profile' render={() => <Profile profilePage={props.state.profilePage} dispatch={props.dispatch}/>}/>
                 <Route path='/dialogs' render={() => <Dialogs dialogs={props.state.dialogsPage.dialogs} messages={props.state.dialogsPage.messages}/>}/>
             </div>
                 <Footer />

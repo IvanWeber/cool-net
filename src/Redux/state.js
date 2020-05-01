@@ -27,38 +27,46 @@ export let store = {
         
         sidebar: {}
     },
-
-    getState () {
-        return this._state;
-    },
-
     _callSubscriber () {
         console.log('State changed');
     }, 
 
-    addPost () {
-        let newPost = {
-            id: this._state.profilePage.posts.length + 1, 
-            message: this._state.profilePage.newPostText, 
-            likesCount: Math.round(Math.random()*100)
-        }
-        this._state.profilePage.posts.push(newPost);
-        this._state.profilePage.newPostText = '';
-        this._callSubscriber(this._state);
+    getState () {
+        return this._state;
     },
-
-    updateNewPostText (newText) {
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber(this._state);
-        console.log(this._state.profilePage.newPostText);
-        console.log(this._state.profilePage);
-    },
-    
     subscribe (observer) {
         this._callSubscriber = observer;
+    },
+
+    dispatch(action) {
+            if (action.type === 'ADD-POST') {
+                let newPost = {
+                    id: this._state.profilePage.posts.length + 1, 
+                    message: this._state.profilePage.newPostText, 
+                    likesCount: Math.round(Math.random()*100)
+                }
+                this._state.profilePage.posts.push(newPost);
+                this._state.profilePage.newPostText = '';
+                this._callSubscriber(this._state);
+            } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+                this._state.profilePage.newPostText = action.newText;
+                this._callSubscriber(this._state);
+                console.log(this._state.profilePage.newPostText);
+                console.log(this._state.profilePage);
+            }
     }
 
 };
+
+export const addPostActionCreator = () => {
+    return {
+        type:'ADD-POST'
+    }
+}
+
+export const updateNewPostTextActionCreator = (text) => {
+    return {type: 'UPDATE-NEW-POST-TEXT', newText: text}
+} 
 
 
 export default store;

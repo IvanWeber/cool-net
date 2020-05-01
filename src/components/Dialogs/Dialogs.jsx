@@ -5,7 +5,6 @@ import Message from "./Message/Message"
 import { NavLink } from "react-router-dom"; 
 
 const Dialogs = (props) => {
-    debugger;
 
     let dialogsElements = props.dialogs.map ( d => <DialogItem name={d.name} id={d.id} /> );
 
