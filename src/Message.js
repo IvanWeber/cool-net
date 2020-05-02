@@ -4,7 +4,7 @@ import './App.css';
 const Post = (props) => {
     return (
         <div>
-            <p>her</p>
+            <p>post</p>
         </div>
     )
 };
