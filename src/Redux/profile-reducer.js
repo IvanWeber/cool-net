@@ -18,18 +18,11 @@ const profileReducer = (state, action) => {
         default:
             return state;
     }
-
-    // if (action.type === ADD_POST) {
-    //     let newPost = {
-    //         id: state.posts.length + 1, 
-    //         message: state.newPostText, 
-    //         likesCount: Math.round(Math.random()*100)
-    //     }
-    //     state.posts.push(newPost);
-    //     state.newPostText = '';
-    // } else if (action.type === UPDATE_NEW_POST_TEXT) {
-    //     state.newPostText = action.newText;
-    // }
 }
+
+
+
+export const addPostActionCreator = () => ({type: ADD_POST})
+export const updateNewPostTextActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text})
 
 export default profileReducer;
