@@ -4,8 +4,6 @@ import Post from './Post/Post';
 import {addPostActionCreator, updateNewPostTextActionCreator} from '../../../Redux/state';
 
 const MyPosts = (props) => {
-    
-
     let messagesElements = props.posts.map(m => <Post message={m.message} likesCount={m.likesCount} />)
 
     let newPostElement = React.createRef();
