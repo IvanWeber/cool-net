@@ -4,11 +4,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {store, updateNewMessageText} from './Redux/store.js';
+import store from './Redux/redux-store.js';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 let rerenderEntireTree = () => {
-
   ReactDOM.render(
     <BrowserRouter>
     <React.StrictMode>
