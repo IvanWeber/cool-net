@@ -21,7 +21,7 @@ function App(props) {
             <div className='content'>
                 <LeftMenu />
                 <Route path='/feed' component={MainContentWrapper}/>
-                <Route path='/profile' render={() => <Profile profilePage={props.state.profilePage} dispatch={props.dispatch}/>}/>
+                <Route path='/profile' render={() => <Profile store={props.store}/>}/>
                 <Route path='/dialogs' render={() => <Dialogs dialogsPage={props.state.dialogsPage} dispatch={props.dispatch}/>}/>
             </div>
                 <Footer />
