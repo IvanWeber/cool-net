@@ -5,22 +5,28 @@ import Dialogs from './Dialogs';
 import Message from "./Message/Message";
 import { NavLink } from "react-router-dom"; 
 import {addMessageActionCreator, updateNewMessageText} from '../../Redux/dialogs-reducer'
+import StoreContext from '../../StoreContext';
 
 const DialogsContainer = (props) => {
-
-    let state = props.store.getState();
+ 
+    return <StoreContext.Consumer> 
+        { (store) => {
+            
+    let state = store.getState();
 
     let addMessage = () => {
         let action = addMessageActionCreator();
-        props.store.dispatch(action);
+        store.dispatch(action);
     }
 
     let updateNewMessage = (text) => {
         let action = updateNewMessageText(text);
-        props.store.dispatch(action);
+        store.dispatch(action);
     }
- 
-    return (<Dialogs addMessage={addMessage} updateNewMessage={updateNewMessage} dialogsPage={state.dialogsPage}/>)
+        return <Dialogs addMessage={addMessage} updateNewMessage={updateNewMessage} dialogsPage={state.dialogsPage}/>
+        }
+    }
+    </StoreContext.Consumer>
 };
 
 export default DialogsContainer;
