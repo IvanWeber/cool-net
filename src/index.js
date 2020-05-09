@@ -6,15 +6,15 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import store from './Redux/redux-store.js';
 import { BrowserRouter, Route } from 'react-router-dom';
-import StoreContext from './StoreContext';
+import StoreContext, {Provider} from './StoreContext';
 
 let rerenderEntireTree = () => {
   ReactDOM.render(
     <BrowserRouter>
     <React.StrictMode>
-      <StoreContext.Provider value={store}>
+      <Provider store={store}>
         <App/>
-      </StoreContext.Provider>
+      </Provider>
     </React.StrictMode>
     </BrowserRouter>,
     document.getElementById('root')
