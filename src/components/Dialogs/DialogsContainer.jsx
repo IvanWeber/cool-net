@@ -4,31 +4,51 @@ import DialogItem from "./DialogItem/DialogItem";
 import Dialogs from './Dialogs';
 import Message from "./Message/Message";
 import { NavLink } from "react-router-dom"; 
-import {addMessageActionCreator, updateNewMessageText} from '../../Redux/dialogs-reducer'
-import StoreContext from '../../StoreContext';
+import {sendMessageActionCreator, updateNewMessageTextActionCreator} from '../../Redux/dialogs-reducer'
+import {connect} from 'react-redux';
 
-const DialogsContainer = (props) => {
+
+// const DialogsContainer = (props) => {
  
-    return <StoreContext.Consumer> 
-        { (store) => {
+//     return <StoreContext.Consumer> 
+//         { (store) => {
             
-    let state = store.getState();
+//     let state = store.getState();
 
-    let addMessage = () => {
-        let action = addMessageActionCreator();
-        store.dispatch(action);
-    }
+//     let sendMessage = () => {
+//         let action = sendMessageActionCreator();
+//         store.dispatch(action);
+//     }
 
-    let updateNewMessage = (text) => {
-        let action = updateNewMessageText(text);
-        store.dispatch(action);
-    }
-        return <Dialogs addMessage={addMessage} updateNewMessage={updateNewMessage} dialogsPage={state.dialogsPage}/>
-        }
-    }
-    </StoreContext.Consumer>
-};
+//     let updateNewMessage = (text) => {
+//         let action = updateNewMessageTextActionCreator(text);
+//         store.dispatch(action);
+//     }
+//         return <Dialogs sendMessage={sendMessage} updateNewMessage={updateNewMessage} dialogsPage={state.dialogsPage}/>
+//         }
+//     }
+//     </StoreContext.Consumer>
+// };
 
-export default DialogsContainer;
+let mapStateToProps = (state) => {
+    return {
+        dialogsPage: state.dialogsPage
+    }
+}
+
+let mapDispatchToProps = (dispatch) => {
+    return {
+        updateNewMessageText: () => {
+            dispatch(sendMessageActionCreator());
+        },
+        sendMessage: (text) => {
+            dispatch(updateNewMessageTextActionCreator(text));
+        },
+    }
+}
+
+const SuperDialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
+
+export default SuperDialogsContainer;
 
 
