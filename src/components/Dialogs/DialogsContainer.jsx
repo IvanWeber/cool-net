@@ -7,29 +7,6 @@ import { NavLink } from "react-router-dom";
 import {sendMessageActionCreator, updateNewMessageTextActionCreator} from '../../Redux/dialogs-reducer'
 import {connect} from 'react-redux';
 
-
-// const DialogsContainer = (props) => {
- 
-//     return <StoreContext.Consumer> 
-//         { (store) => {
-            
-//     let state = store.getState();
-
-//     let sendMessage = () => {
-//         let action = sendMessageActionCreator();
-//         store.dispatch(action);
-//     }
-
-//     let updateNewMessage = (text) => {
-//         let action = updateNewMessageTextActionCreator(text);
-//         store.dispatch(action);
-//     }
-//         return <Dialogs sendMessage={sendMessage} updateNewMessage={updateNewMessage} dialogsPage={state.dialogsPage}/>
-//         }
-//     }
-//     </StoreContext.Consumer>
-// };
-
 let mapStateToProps = (state) => {
     return {
         dialogsPage: state.dialogsPage

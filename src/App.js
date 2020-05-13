@@ -5,7 +5,6 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import LeftMenu from './components/LeftMenu/LeftMenu';
 import MainContentWrapper from './components/MainContentWrapper/MainContentWrapper';
-// import UserPage from './components/UserPage/UserPage';
 import Profile from './components/Profile/Profile'
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import { BrowserRouter, Route } from 'react-router-dom';
