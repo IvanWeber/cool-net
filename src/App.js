@@ -7,6 +7,7 @@ import LeftMenu from './components/LeftMenu/LeftMenu';
 import MainContentWrapper from './components/MainContentWrapper/MainContentWrapper';
 import Profile from './components/Profile/Profile'
 import DialogsContainer from './components/Dialogs/DialogsContainer';
+import UsersContainer from './components/Users/UsersContainer';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 
@@ -22,6 +23,7 @@ function App(props) {
                 <Route path='/feed' component={MainContentWrapper}/>
                 <Route path='/profile' render={() => <Profile />}/>
                 <Route path='/dialogs' render={() => <DialogsContainer />}/>
+                <Route path='/users' render={() => <UsersContainer />}/>
             </div>
                 <Footer />
             </div>
