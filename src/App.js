@@ -18,13 +18,13 @@ function App(props) {
         <div className="superwrapper">
             <div className="wrapper">
                 <Header />
-            <div className='content'>
-                <LeftMenu />
-                <Route path='/feed' component={MainContentWrapper}/>
-                <Route path='/profile' render={() => <Profile />}/>
-                <Route path='/dialogs' render={() => <DialogsContainer />}/>
-                <Route path='/users' render={() => <UsersContainer />}/>
-            </div>
+                <div className='content'>
+                    <LeftMenu />
+                    <Route path='/feed' component={MainContentWrapper}/>
+                    <Route path='/profile' render={() => <Profile />}/>
+                    <Route path='/dialogs' render={() => <DialogsContainer />}/>
+                    <Route path='/users' render={() => <UsersContainer />}/>
+                </div>
                 <Footer />
             </div>
         </div>
