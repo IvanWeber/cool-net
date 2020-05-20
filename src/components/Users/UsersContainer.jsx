@@ -3,13 +3,13 @@ import Users from './Users';
 import {connect} from 'react-redux';
 import {followAC, unfollowAC, setUsersAC} from '../../Redux/users-reducer';
 
-let mapStateToProps = (state) => {
+let mapStateToProps = (state) => { //прокидываем через пропсы даннные
     return {
         users: state.usersPage.users
     }
 }
 
-let mapDispatchToProps = (dispatch) => {
+let mapDispatchToProps = (dispatch) => {// прокидываем через пропсы колбэки 
     return {
         follow: (userId) => {
             dispatch(followAC(userId))
