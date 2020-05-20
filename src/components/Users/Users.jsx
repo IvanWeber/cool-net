@@ -5,19 +5,23 @@ import userPhoto from '../../assets/images/users.png'
 
 let Users = (props) => {
 
-    if (props.users.length === 0) {
-        axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
-            props.setUsers(response.data.items);
-        });
+    let getUsers = () => {
 
-    //     props.setUsers([
-    //     {id: 1, photoUrl: 'https://cdn.pixabay.com/photo/2014/09/05/18/32/old-books-436498_960_720.jpg', followed: false, fullName: 'Dmitry', status: 'I am a boss', location: {city: 'Minsk', country: 'Belarus'} },
-    //     {id: 2, photoUrl: 'https://cdn.pixabay.com/photo/2014/09/05/18/32/old-books-436498_960_720.jpg', followed: true, fullName: 'Sasha', status: 'I am a boss too', location: {city: 'Moscow', country: 'Russia'} },
-    //     {id: 3, photoUrl: 'https://cdn.pixabay.com/photo/2014/09/05/18/32/old-books-436498_960_720.jpg', followed: false, fullName: 'Andrew', status: 'I am a boss too', location: {city: 'Kiev', country: 'Ukraine'} },
-    // ]);
+        if (props.users.length === 0) {
+            axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
+                props.setUsers(response.data.items);
+            });
+    
+        //     props.setUsers([
+        //     {id: 1, photoUrl: 'https://cdn.pixabay.com/photo/2014/09/05/18/32/old-books-436498_960_720.jpg', followed: false, fullName: 'Dmitry', status: 'I am a boss', location: {city: 'Minsk', country: 'Belarus'} },
+        //     {id: 2, photoUrl: 'https://cdn.pixabay.com/photo/2014/09/05/18/32/old-books-436498_960_720.jpg', followed: true, fullName: 'Sasha', status: 'I am a boss too', location: {city: 'Moscow', country: 'Russia'} },
+        //     {id: 3, photoUrl: 'https://cdn.pixabay.com/photo/2014/09/05/18/32/old-books-436498_960_720.jpg', followed: false, fullName: 'Andrew', status: 'I am a boss too', location: {city: 'Kiev', country: 'Ukraine'} },
+        // ]);
+        }
     }
 
     return <div>
+                <button onClick={getUsers}>Get Users</button>
         {
             props.users.map(u => <div key={u.id}>
                 <span>
