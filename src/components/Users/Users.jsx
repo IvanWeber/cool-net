@@ -12,8 +12,6 @@ let Users = (props) => {
         pages.push(i);
     }
 
-    console.log(props.totalUsersCount);
-
     return <div>
             <div>
                 {pages.map( p => {
