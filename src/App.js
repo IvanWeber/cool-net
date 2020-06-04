@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Header from './components/Header/Header';
+import HeaderContainer from './components/Header/HeaderContainer';
 import Footer from './components/Footer/Footer';
 import LeftMenu from './components/LeftMenu/LeftMenu';
 import MainContentWrapper from './components/MainContentWrapper/MainContentWrapper';
@@ -17,7 +17,7 @@ function App(props) {
   return (
         <div className="superwrapper">
             <div className="wrapper">
-                <Header />
+                <HeaderContainer />
                 <div className='content'>
                     <LeftMenu />
                     <Route path='/feed' component={MainContentWrapper}/>
