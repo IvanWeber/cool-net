@@ -58,8 +58,8 @@ body {
     flex-direction: row;
     margin-left: auto;
     margin-right: auto;
-    /* max-width: 70%; */
-    min-width: 50vw;
+    max-width: 70%;
+    min-width: 70%;
     background-color: steelblue;
 }
 
